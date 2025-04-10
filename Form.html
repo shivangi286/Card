@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+input[type=email] {
+  width: 100%;
+  padding: 8px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 8px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #2aa930;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.div-time {
+  width: 100%;
+  padding-top: 20px;
+  text-align: left;
+  background-color: white;
+}
+
+.div-uppertime {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: white;
+}
+
+.title {
+  color: black;
+  font-size: 15px;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+</style>
+<body>
+
+  <div class="div-uppertime" id="uppertime">
+  </div>
+
+<div class="container">
+       <p class="title">Before we chat, we just need a few details about you and your parcel.</p>
+    <form>
+        <label for="fname">First name</label>
+        <font color= Red> * </font>
+        <input type="text" id="fname" placeholder="First name" required><br><br>
+    
+        <label for="lname">Last name</label>
+        <font color= Red> * </font>
+        <input type="text" id="lname" placeholder="Last name"required><br><br>
+    
+        <label for="email">Email address</label>
+        <font color= Red> * </font>
+        <input type="email" id="email" autocomplete="off" placeholder="Email address"required/><br><br>
+
+        <label for="lineaddress">First line of address</label>
+        <font color= Red> * </font>
+        <input type="text" id="lineaddress" placeholder="First line of address"required><br><br>
+    
+        <label for="pcode">Postcode</label>
+        <input type="number" id="pcode" placeholder="Postcode"><br><br>
+    
+        <label for="nHelp">What do you need help with?</label>
+        <font color= Red> * </font>
+        <!-- <font color= Red> * </font> -->
+        <select id="nHelp" required>
+          <option value="">Select....</option>
+          <option value="My Parcel is late">My Parcel is late</option>
+          <option value="Change my delivery options">Change my delivery options</option>
+          <option value="I am awaiiting feedback from Yodel">I am awaiiting feedback from Yodel</option>
+          <option value="Tracking shows delivered but there is an issue">Tracking shows delivered but there is an issue</option>
+          <option value="I missed the delivery of my parcel">I missed the delivery of my parcel</option>
+          <option value="I have returned my parcel but there is an issue">I have returned my parcel but there is an issue</option>
+          <option value="I need help to return a parcel">I need help to return a parcel</option>
+          <option value="My query is not related to any of the above">My query is not related to any of the above</option>
+        </select><br><br>
+    
+        <label for="tNumber">Tracking number</label>
+        <input type="number" id="tNumber" placeholder="Tracking number"><br><br>
+    
+      <input type="submit" onclick="storeInput()" value="Submit">
+  </form>
+</div>
+
+<div class="div-time" id="time">
+</div>
+</body>
+
+<script>
+  function updateTime() {
+      const date = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const time = date.toLocaleTimeString();
+      const day = date.toLocaleDateString(undefined, options);
+      document.getElementById('time').innerHTML =
+          `Yodel • ${time}`;
+          document.getElementById('uppertime').innerHTML =
+          `${time}`;
+  }
+
+  setInterval(updateTime, 1000);
+  updateTime();
+</script>
+
+<script src="storeInputValue.js"> </script>
+
+</html>
