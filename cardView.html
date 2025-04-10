@@ -10,12 +10,47 @@
   text-align: center;
   font-family: arial;
   border-radius: 8px;
+  background-color: white;
+}
+
+.heading {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  padding-top: 30px;
+  padding-left: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.headingTitle {
+  color: black;
+  margin: 0;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-left: 15px;
+  text-align: left;
+}
+
+heading-group {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
 }
 
 .chat {
   color: black;
   font-size: 15px;
   padding-top: 20px;
+}
+
+.background {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-width: 330px;
+  height: 150px;
+  font-family: arial;
+  background-color: #67B212;
 }
 
 .card button {
@@ -83,9 +118,30 @@ button-padding {
   padding-right: 5px;
 }
 
+button-dropdown {
+  padding-top: 30px;
+  padding-right: 15px;
+  margin: 0;
+  background-color: #67B212;
+  border-top-right-radius: 8px;
+}
+
 </style>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <div class="background">
+    <heading-group>
+    <p class="heading">YODEL</p>
+    <button-dropdown>
+      <a href="Form.html" style="text-decoration:none">
+    <button style= "background-color: #67B212; border: none; font-size:16px;" ><i class="fa fa-chevron-down"></i></button>
+    </a>
+  </button-dropdown>
+    </heading-group>
+    <p class="headingTitle">How can we help?</p>
         <div class="card">
             <p class="chat">Chat with our team</p>
           <img src="https://media-hosting.imagekit.io/174d60c85bc44dcd/Screenshot%202025-03-28%20135548.png?Expires=1837758364&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NW7NqU55~Aa0rTg7yUisnC~bEy6YNZnyLgAad1iMkLweho-BSV8UFsBDMS-zFmtMlG7TaxGFRS3qDGTJY2SBVpzylEWgoGg5YFl8T15f3f9Gp0AlLHyQ~heLMEkNigSm5U44xokGHqeG24XRm59K9BuriGScFYYYEtHxbTacCI2VSJ00rfgWKZ6lxIAYSm8fiSiGtFUc-O~ozv6PVVtZ7gMsF-wf9JOBJSRJ5GH6QHWgtPPa6C3JvM4G1eahxC2W5TUZ-oiVXCqH4bPOZ40VgoNJGLfqP84UEgYcJbnAOVf4Eeb1NDglSR2f~NoHaGWa7kvyfLCoX5IutLC1u4PQGA__" style="width:50%">
@@ -112,6 +168,6 @@ button-padding {
           </button-group>
           
         </div>       
-
+      </div>
 </body>
 </html>
