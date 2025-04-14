@@ -58,16 +58,17 @@ div {
 }
 
 .div-time {
-  width: 100%;
+  max-width: 360px;
   padding-top: 20px;
   text-align: left;
   background-color: white;
+  margin: 0;
 }
 
 .div-uppertime {
-  width: 100%;
+  max-width: 360px;
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
   text-align: center;
   background-color: white;
 }
@@ -81,14 +82,131 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 10px;
+  max-width: 300px;
+}
+
+.divcontainer {
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 360px;
+  background-color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: gray;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+div.sticky {
+  position: sticky;
+  padding: 5px;
+  background-color: #eceed2;
+  color: black;
+  bottom: 0;
+  border: 1px solid #2aa930;
+  max-width: 360px;
+}
+
+.alerttitle{
+  color: black;
+  font-size: 14px;
+  margin: 0;
+  padding-top: 1px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+alert-group {
+  display: flex;
+  flex-direction: row;
+}
+
+icon-group {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.icon {
+            font-size: 11pt;
+            color: rgb(14, 159, 14); /* Set the desired text color */
+            display: inline-flex;
+            align-items: center;
+            background-color: #eceed2;
+        }
+.icon svg {
+            width: 16px;   /* Set the desired size */
+            height: 16px;
+            fill: currentColor;
+        }
+  
+.heading {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+heading-group {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.background {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-width: 360px;
+  font-family: arial;
+  background-color: #67B212;
+}
+
+back-button{
+  padding-top: 24px;
+  padding-left: 10px;
+  margin: 0;
+  background-color: #67B212;
+  border-top-left-radius: 8px;
+}
+
+button-dropdown {
+  padding: 24px;
+  margin: 0;
+  background-color: #67B212;
+  border-top-right-radius: 8px;
 }
 </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
 
-  <div class="div-uppertime" id="uppertime">
-  </div>
-
-<div class="container">
+   <div class="background">
+     <heading-group>
+      <alert-group>
+      <back-button>
+        <button style= "background-color: #67B212; border: none; font-size:16px;" onclick="history.back()" ><i class="fa fa-arrow-left"></i></button>
+        </back-button>
+    <p class="heading">YODEL</p>
+     </alert-group>
+     <button-dropdown>
+    <button style= "background-color: #67B212; border: none; font-size:16px;" onclick="" ><i class="fa fa-chevron-down"></i></button>
+     </button-dropdown>
+     </heading-group>
+    </div> 
+    <div class="divcontainer">
+    <div class="div-uppertime" id="uppertime"></div>
+ 
+   <div class="container">
        <p class="title">Before we chat, we just need a few details about you and your parcel.</p>
     <form>
         <label for="fname">First name</label>
@@ -130,10 +248,31 @@ div {
     
       <input type="submit" onclick="storeInput()" value="Submit">
   </form>
-</div>
+   </div>
+   <div class="div-time" id="time">
+   </div>
+  </div>
+   <div id="alertId" class="sticky">
+   <icon-group>
+    <alert-group>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+      <defs>
+          <!-- Replace with your desired SVG -->
+          <symbol id="info-icon" viewBox="0 0 16 16">
+              <path d="M7.92,5.32v0A.92.92,0,1,0,7,4.37v0A.92.92,0,0,0,7.92,5.32ZM8.85,6H6.55a4.58,4.58,0,0,1-.1.63,3,3,0,0,1-.2.67h1.3v3.53H6.25v1.3H9.57v-1.3H8.85ZM13,3.05A7,7,0,1,0,13,13,7,7,0,0,0,13,3.05ZM12,12A5.6,5.6,0,0,1,4,12,5.61,5.61,0,0,1,4,4,5.6,5.6,0,0,1,12,4,5.61,5.61,0,0,1,12,12Z"/>
+          </symbol>
+      </defs>
+   </svg>
 
-<div class="div-time" id="time">
-</div>
+   <div class="icon">
+      <svg><use href="#info-icon" /></svg>
+   </div>
+    <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy">Privacy & Cookies Policy.</a> </p>
+    </alert-group>
+    <span class="closebtn" onclick="myFunction()">&times;</span>
+    </icon-group>
+   </div>
+
 </body>
 
 <script>
@@ -150,6 +289,10 @@ div {
 
   setInterval(updateTime, 1000);
   updateTime();
+
+  function myFunction() {
+  document.getElementById("alertId").style.display = "none";
+}
 </script>
 
 <script src="storeInputValue.js"> </script>
