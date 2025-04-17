@@ -184,6 +184,12 @@ button-dropdown {
   background-color: #67B212;
   border-top-right-radius: 8px;
 }
+
+.submission-message {
+            color: black;
+            text-align: center;
+            margin-top: 0px;
+        }
 </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -246,7 +252,7 @@ button-dropdown {
         <label for="tNumber">Tracking number</label>
         <input type="number" id="tNumber" placeholder="Tracking number"><br><br>
     
-      <input type="submit" onclick="storeInput()" value="Submit">
+      <input type="submit" id="submit-btn" onclick="storeInput() " value="Submit">
   </form>
    </div>
    <div class="div-time" id="time">
@@ -269,10 +275,11 @@ button-dropdown {
    </div>
     <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy">Privacy & Cookies Policy.</a> </p>
     </alert-group>
-    <span class="closebtn" onclick="myFunction()">&times;</span>
+    <span class="closebtn">&times;</span>
     </icon-group>
    </div>
 
+   <div class="submission-message" style="display: none;"></div>
 </body>
 
 <script>
@@ -295,6 +302,72 @@ button-dropdown {
 }
 </script>
 
-<script src="storeInputValue.js"> </script>
+<!-- <script src="storeInputValue.js"> </script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.onload = function() {
+    var inputFields = document.querySelectorAll('input');
+    inputFields.forEach(function(input) {
+      input.setAttribute('autocomplete', 'off');
+    });
+  };
+        $(function () {
+            $("#submit-btn").click(function () {
+                // Retrieve form data
+                var firstName = $("#fname").val().trim();
+                var lastName = $("#lname").val().trim();
+                var email = $("#email").val().trim();
+                var lineaddress = $("#lineaddress").val().trim();
+                var pcode = $("#pcode").val().trim();
+                var nHelp = $("#nHelp").val().trim();
+                var tNumber = $("#tNumber").val().trim();
+                // Validate input fields
+                if (firstName === '' || lastName === '' || email === '' || lineaddress === ''|| nHelp === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+                // Validate email format
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                // Disable form fields after submission
+                $("input").prop('disabled', true);
+                $("button").prop('disabled', true);
+                // Send form data via postMessage
+                var targetOrigin = 'https://www.mrappliance.com'; // Replace this with your target origin
+
+                window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event',
+                    data: JSON.stringify({
+                        event: {
+                            code: "userdetails",
+                            data: {
+                                firstname: firstName,
+                                lastname: lastName,
+                                lineaddress: lineaddress,
+                                email: email,
+                                pcode: pcode,
+                                nHelp: nHelp,
+                                tNumber: tNumber
+                            }
+                        }
+                    })
+                }), targetOrigin);
+                // Fade out the form and append thank you message
+                $("#submit-btn").fadeOut("slow", function () {
+                    // $(".submission-message").fadeIn("slow");
+                    alert("Details submitted successfully!")
+                });
+            });
+
+            // // Cancel button click event
+            // $("#cancel-btn").click(function () {
+            //     $("#form").html("<div class='submission-message'>Going Back!</div>");
+            // });
+        });
+    </script>
 
 </html>
