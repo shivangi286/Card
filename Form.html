@@ -2,6 +2,20 @@
 <html>
 <style>
 
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ 
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+}
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 8px;
@@ -11,6 +25,7 @@ input[type=text], select, textarea {
   border-radius: 4px;
   resize: vertical;
   box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 input[type=email] {
@@ -22,6 +37,7 @@ input[type=email] {
   border-radius: 4px;
   resize: vertical;
   box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 input[type=number] {
@@ -33,22 +49,23 @@ input[type=number] {
   border-radius: 4px;
   resize: vertical;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
+  background-color: #ffffff;
+  
 }
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color:#99CC00;
   color: white;
-  padding: 10px;
+  padding: 8px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #2aa930;
+  background-color: #4e4e4f;
+  color: #ffffff;
 }
 
 div {
@@ -57,38 +74,24 @@ div {
   padding: 5px;
 }
 
-.div-time {
-  max-width: 360px;
-  padding-top: 20px;
-  text-align: left;
-  background-color: white;
-  margin: 0;
-}
-
-.div-uppertime {
-  max-width: 360px;
-  padding-top: 10px;
-  padding-bottom: 24px;
-  text-align: center;
-  background-color: white;
-}
-
 .title {
-  color: black;
-  font-size: 15px;
+  color: #4e4e4f;
+  font-size: 12px;
+  font-family: "Mulish", sans-serif;
 }
 
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 10px;
-  max-width: 300px;
+  width: 100%;
+  position: relative;
+  padding-bottom: 32px;
 }
 
 .divcontainer {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 360px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
   background-color: white;
 }
 
@@ -106,11 +109,31 @@ div {
 div.sticky {
   position: sticky;
   padding: 5px;
-  background-color: #eceed2;
+  background-color: #f7fbeb;
   color: black;
   bottom: 0;
-  border: 1px solid #2aa930;
-  max-width: 360px;
+  border: 1px solid #99cc00;
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contentleft{
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  background-color: #f7fbeb;
+}
+
+.contentleft img{
+  margin-right: 8px;
+  background-color: #f7fbeb;
+}
+
+.contentright {
+  background-color: #f7fbeb;
 }
 
 .alerttitle{
@@ -122,67 +145,14 @@ div.sticky {
   text-align: left;
 }
 
-alert-group {
-  display: flex;
-  flex-direction: row;
-}
 
-icon-group {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-}
-
-.icon {
-            font-size: 11pt;
-            color: rgb(14, 159, 14); /* Set the desired text color */
-            display: inline-flex;
-            align-items: center;
-            background-color: #eceed2;
-        }
-.icon svg {
-            width: 16px;   /* Set the desired size */
-            height: 16px;
-            fill: currentColor;
-        }
-  
-.heading {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-  padding-top: 20px;
-  padding-left: 5px;
-  text-align: left;
-  font-weight: bold;
-}
-
-heading-group {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-}
 
 .background {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  max-width: 360px;
+  width: 100%;
   font-family: arial;
   background-color: #67B212;
-}
-
-back-button{
-  padding-top: 24px;
-  padding-left: 10px;
-  margin: 0;
-  background-color: #67B212;
-  border-top-left-radius: 8px;
-}
-
-button-dropdown {
-  padding: 24px;
-  margin: 0;
-  background-color: #67B212;
-  border-top-right-radius: 8px;
 }
 
 .submission-message {
@@ -190,117 +160,161 @@ button-dropdown {
             text-align: center;
             margin-top: 0px;
         }
+        .yodelLogo{
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          position: absolute;
+          left: -10px;
+          bottom: -24px;
+        
+        }
+        .Formvalues{
+          display: flex;
+          flex-direction: column;
+        }
+        .Formvalues label span{
+          color: #CC0000;
+        }
+
+        .Formvalues label {
+          font-size: 12px;
+          margin-bottom: 6px;
+          font-family: Mulish, sans-serif;
+        }
+        input[type=text], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 2px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 30px !important;
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
 </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
 
-   <div class="background">
-     <heading-group>
-      <alert-group>
-      <back-button>
-        <button style= "background-color: #67B212; border: none; font-size:16px;" onclick="history.back()" ><i class="fa fa-arrow-left"></i></button>
-        </back-button>
-    <p class="heading">YODEL</p>
-     </alert-group>
-     <button-dropdown>
-    <button style= "background-color: #67B212; border: none; font-size:16px;" onclick="" ><i class="fa fa-chevron-down"></i></button>
-     </button-dropdown>
-     </heading-group>
-    </div> 
     <div class="divcontainer">
-    <div class="div-uppertime" id="uppertime"></div>
- 
-   <div class="container">
+      <!-- <button style= "padding-top: 10px; padding-bottom: 20px; background-color: white; border: none; font-size:16px;" onclick="history.back()" ><i class="fa fa-arrow-left"></i> Back</button> -->
+      <div class="container">
        <p class="title">Before we chat, we just need a few details about you and your parcel.</p>
-    <form>
-        <label for="fname">First name</label>
-        <font color= Red> * </font>
-        <input type="text" id="fname" placeholder="First name" required><br><br>
-    
-        <label for="lname">Last name</label>
-        <font color= Red> * </font>
-        <input type="text" id="lname" placeholder="Last name"required><br><br>
-    
-        <label for="email">Email address</label>
-        <font color= Red> * </font>
-        <input type="email" id="email" autocomplete="off" placeholder="Email address"required/><br><br>
+     <form class="Formvalues">
+      <div>
+        <label for="fname">First name <span>*</span></label>
+        
+        <input class="form-control" type="text" id="fname" placeholder="First name" required>
+      </div>
+     
+    <div>
+      <label for="lname">Last name <span>*</span> </label>
 
-        <label for="lineaddress">First line of address</label>
-        <font color= Red> * </font>
-        <input type="text" id="lineaddress" placeholder="First line of address"required><br><br>
-    
+      <input class="form-control" type="text" id="lname" placeholder="Last name"required>
+    </div>
+        <div>
+          <label for="email">Email address <span>*</span> </label>
+          
+          <input class="form-control" type="email" id="email" autocomplete="off" placeholder="Email address"required/>
+        </div>
+        
+        
+<div>
+  <label style="font-size: 12px; font-family: Mulish, sans-serif;" for="lineaddress">First line of address <span>*</span></label>
+  
+  <input class="form-control" type="text" id="lineaddress" placeholder="First line of address"required>
+</div>
+       <div>
         <label for="pcode">Postcode</label>
-        <input type="number" id="pcode" placeholder="Postcode"><br><br>
-    
-        <label for="nHelp">What do you need help with?</label>
-        <font color= Red> * </font>
+        <input class="form-control" type="number" id="pcode" placeholder="Postcode">
+       </div>
+  
+    <div>
+      <label for="nHelp">What do you need help with? <span>*</span></label>
+      
+    </div>
+        <div>
+          <select class="form-control" id="nHelp" required>
+            <option value="">Select....</option>
+            <option value="My Parcel is late">My Parcel is late</option>
+            <option value="Change my delivery options">Change my delivery options</option>
+            <option value="I am awaiiting feedback from Yodel">I am awaiiting feedback from Yodel</option>
+            <option value="Tracking shows delivered but there is an issue">Tracking shows delivered but there is an issue</option>
+            <option value="I missed the delivery of my parcel">I missed the delivery of my parcel</option>
+            <option value="I have returned my parcel but there is an issue">I have returned my parcel but there is an issue</option>
+            <option value="I need help to return a parcel">I need help to return a parcel</option>
+            <option value="My query is not related to any of the above">My query is not related to any of the above</option>
+          </select>
+        </div>
         <!-- <font color= Red> * </font> -->
-        <select id="nHelp" required>
-          <option value="">Select....</option>
-          <option value="My Parcel is late">My Parcel is late</option>
-          <option value="Change my delivery options">Change my delivery options</option>
-          <option value="I am awaiiting feedback from Yodel">I am awaiiting feedback from Yodel</option>
-          <option value="Tracking shows delivered but there is an issue">Tracking shows delivered but there is an issue</option>
-          <option value="I missed the delivery of my parcel">I missed the delivery of my parcel</option>
-          <option value="I have returned my parcel but there is an issue">I have returned my parcel but there is an issue</option>
-          <option value="I need help to return a parcel">I need help to return a parcel</option>
-          <option value="My query is not related to any of the above">My query is not related to any of the above</option>
-        </select><br><br>
     
-        <label for="tNumber">Tracking number</label>
-        <input type="number" id="tNumber" placeholder="Tracking number"><br><br>
+    <div>
+      <label for="tNumber">Tracking number</label>
+      <input class="form-control" type="number" id="tNumber" placeholder="Tracking number">
+    </div>
+       
     
       <input type="submit" id="submit-btn" onclick="storeInput() " value="Submit">
   </form>
-   </div>
-   <div class="div-time" id="time">
-   </div>
+  <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/yod-icon.png" alt="yodel" class="yodelLogo"/>
+      </div>
   </div>
-   <div id="alertId" class="sticky">
-   <icon-group>
-    <alert-group>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-      <defs>
-          <!-- Replace with your desired SVG -->
-          <symbol id="info-icon" viewBox="0 0 16 16">
-              <path d="M7.92,5.32v0A.92.92,0,1,0,7,4.37v0A.92.92,0,0,0,7.92,5.32ZM8.85,6H6.55a4.58,4.58,0,0,1-.1.63,3,3,0,0,1-.2.67h1.3v3.53H6.25v1.3H9.57v-1.3H8.85ZM13,3.05A7,7,0,1,0,13,13,7,7,0,0,0,13,3.05ZM12,12A5.6,5.6,0,0,1,4,12,5.61,5.61,0,0,1,4,4,5.6,5.6,0,0,1,12,4,5.61,5.61,0,0,1,12,12Z"/>
-          </symbol>
-      </defs>
-   </svg>
 
-   <div class="icon">
-      <svg><use href="#info-icon" /></svg>
-   </div>
+  
+    
+    <div id="alertId" class="sticky">
+      <div class="contentleft">
+        <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/ex-icon.png" alt="infoIcon">
+        <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy">Privacy & Cookies Policy.</a> </p>
+      </div>
+      <div class="contentright">
+        <span class="closebtn" id="closebutton" onclick="myFunction()">&times;</span>
+      </div>
+
+    </div>
+    
+   <!-- <div class="alert-group">
+   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <defs>
+        <!-- Replace with your desired SVG -->
+        <!-- <symbol id="info-icon" viewBox="0 0 16 16">
+            <path d="M7.92,5.32v0A.92.92,0,1,0,7,4.37v0A.92.92,0,0,0,7.92,5.32ZM8.85,6H6.55a4.58,4.58,0,0,1-.1.63,3,3,0,0,1-.2.67h1.3v3.53H6.25v1.3H9.57v-1.3H8.85ZM13,3.05A7,7,0,1,0,13,13,7,7,0,0,0,13,3.05ZM12,12A5.6,5.6,0,0,1,4,12,5.61,5.61,0,0,1,4,4,5.6,5.6,0,0,1,12,4,5.61,5.61,0,0,1,12,12Z"/>
+        </symbol>
+    </defs>
+    </svg>
+
+    <div class="icon" id="alertID">
+    <svg><use href="#info-icon" /></svg>
+    </div>
     <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy">Privacy & Cookies Policy.</a> </p>
-    </alert-group>
-    <span class="closebtn">&times;</span>
-    </icon-group>
-   </div>
-
+     </div>
+      
+    </div> -->
+ <!-- </div> -->
    <div class="submission-message" style="display: none;"></div>
 </body>
 
-<script>
-  function updateTime() {
-      const date = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      const time = date.toLocaleTimeString();
-      const day = date.toLocaleDateString(undefined, options);
-      document.getElementById('time').innerHTML =
-          `Yodel • ${time}`;
-          document.getElementById('uppertime').innerHTML =
-          `${time}`;
-  }
-
-  setInterval(updateTime, 1000);
-  updateTime();
-
+<!-- <script>
   function myFunction() {
   document.getElementById("alertId").style.display = "none";
 }
-</script>
+</script> -->
 
 <!-- <script src="storeInputValue.js"> </script> -->
 
@@ -314,7 +328,7 @@ button-dropdown {
   };
         $(function () {
             $("#submit-btn").click(function () {
-                // Retrieve form data
+                // Retrieve form data``
                 var firstName = $("#fname").val().trim();
                 var lastName = $("#lname").val().trim();
                 var email = $("#email").val().trim();
@@ -363,11 +377,19 @@ button-dropdown {
                 });
             });
 
-            // // Cancel button click event
-            // $("#cancel-btn").click(function () {
-            //     $("#form").html("<div class='submission-message'>Going Back!</div>");
-            // });
+            
         });
+    </script>
+
+    <script>
+      function myFunction() {
+  var x = document.getElementById("alertId");
+  if (x.style.display === "none") {
+    
+  } else {
+    x.style.display = "none";
+  }
+}
     </script>
 
 </html>
