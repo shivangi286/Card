@@ -1,214 +1,196 @@
 <!DOCTYPE html>
- <html>
- <head>
- <style>
+<html>
+<head>
+<style>
+   
+   *,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
  
-    *,
- *::after,
- *::before {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
- }
- 
- html,
- body {
-   height: 100%;
-   font-size: 100%;
- }
- 
- .card {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-   width: 100%;
-   margin: auto;
-   margin-bottom: 15px;
-   text-align: center;
-   font-family: "Mulish", sans-serif;
-   border-radius: 8px;
-   background-color: white;
-   padding: 15px;
-   font-size: 16px;
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
- }
- 
- 
- .chat {
-   color: black;
-   font-size: 16px;
-   line-height: 1.4;
-   margin: 0;
-   font-weight: normal;
- 
- }
- .Userimage {
-   height: 100px;
-   width: 100px;
-   padding: 5px;
- 
- }
- .background {
-   border-top-left-radius: 8px;
-   border-top-right-radius: 8px;
-   max-width: 400px;
-   height: 150px;
-   /* background-color: #67B212; */
- }
- 
- .card button {
-   border: none;
-   outline: 0;
-   padding: 8px;
-   color: black;
-   background-color: #99CC00;
-   text-align: center;
-   cursor: pointer;
-   width: 100%;
-   font-size: 14px;
-   font-weight: bold;
-   padding: 8px 12px;
- 
- }
- 
- .card button:hover {
-   background-color: #808080 !important;
-     color: white !important;
-     border-color: #808080 !important;
- }
- 
- .days {
-   color: black;
-   display: flex;
-   align-items: center;
-   justify-content:flex-start;
-   font-size: 14px; 
-   text-align: left;
-   padding: 0px;
-   margin: 0px 0px 4px 0px;
- }
- .days span:first-child {
- 
-   width: 30%;
- 
- }
- .question{
- 
-     text-align: left;
-     font-size: 11px;
-     color: #4e4e4f;
-     font-family: "Roboto", sans-serif;
- 
- }
- 
- .help{
-     font-size: 12px;
-     text-align: left;
-     font-family: "Mulish", sans-serif;
-     margin: 0px 0px 10px 0px;
-     padding: 0px;
- }
- 
- .button-chat {
-   display: flex;
-   justify-content: center;
-  padding: 8px 16px;
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  border-radius: 8px;
+  background-color: white;
+  padding: 15px;
+  font-size: 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.chat {
+  color: black;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: normal;
+  
+}
+.Userimage {
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+
+}
+.background {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  max-width: 400px;
+  height: 150px;
+  /* background-color: #67B212; */
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: black;
   background-color: #99CC00;
-  color: #000000;
-  align-items: center;
-  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
   font-size: 14px;
-  margin-top: 10px;
- }
- 
- .button-chat:hover{
-   background-color: #4e4e4f;
-   color: #ffffff;
- }
- .button-group {
-   display: flex;
-   justify-content:space-between;
-   align-items: center;
-   flex-wrap: wrap;
-   flex-direction: row;
-   margin-top: 8px;
- 
- }
- 
- .button-group button{
-   background-color: #99CC00;
-   color:#000000;
-   width: calc(100% /3 - 6px);
-   height: 75px;
-   font-size: 14px!important;
-   font-size: 13px!important;
-   font-family: "Mulish", sans-serif ;
- 
- }
- 
- 
- 
- </style>
-   <title>Font Awesome Icons</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
- 
- </head>
- <body>
-         <div class="card">
-             <p class="chat">Chat with our team</p>
-           <img class="Userimage" src="https://media-hosting.imagekit.io/174d60c85bc44dcd/Screenshot%202025-03-28%20135548.png?Expires=1837758364&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NW7NqU55~Aa0rTg7yUisnC~bEy6YNZnyLgAad1iMkLweho-BSV8UFsBDMS-zFmtMlG7TaxGFRS3qDGTJY2SBVpzylEWgoGg5YFl8T15f3f9Gp0AlLHyQ~heLMEkNigSm5U44xokGHqeG24XRm59K9BuriGScFYYYEtHxbTacCI2VSJ00rfgWKZ6lxIAYSm8fiSiGtFUc-O~ozv6PVVtZ7gMsF-wf9JOBJSRJ5GH6QHWgtPPa6C3JvM4G1eahxC2W5TUZ-oiVXCqH4bPOZ40VgoNJGLfqP84UEgYcJbnAOVf4Eeb1NDglSR2f~NoHaGWa7kvyfLCoX5IutLC1u4PQGA__" style="width:50%",>
- 
-           <p class="days">
- 
-             <span>Mon - Fri </span> <span>- 08:00 – 19:00</span>
-           </p>
-           <p class="days">
-             <span>Sat </span> <span>- 08:00 – 18:00</span>
-           </p>
-           <p class="days">
-             <span>Sun </span> <span>- Closed</span>
-           </p>
-                 <button class="button-chat" id="button-chat">
-                   Let's Chat
- 
-                 </button>
- 
-         </div>
- 
-         <div class="card">
-             <p class="help">Need a little more help?</p>
-           <p class="question" >Did you know you can see a photo of your delivered parcel in the <a href="https://www.yodel.co.uk/yodel-app">Yodel Parcel Tracker App?</a> </p>
-           <div class="button-group">
-             <button style="font-size: 12px;">Get my collection code</button>
-             <button>Amend my delivery details</button>
-             <button>My parcel is late</button>
-           </div>
- 
-         </div>      
- </body>
- <script>
-   window.onload = function() {
-   };
-   $(function () {
-     $("button-chat").click(function () {
-       window.parent.postMessage(JSON.stringify({
-                     event_code: 'ym-client-event',
-                     data: JSON.stringify({
-                         event: {
-                             code: "userdetails",
-                             data: {
- 
-                             }
-                         }
-                     })
-                 }), targetOrigin);
-               }
-             )
-   }
- )
- </script>
- <script src="mainView.js"> </script>
- </html>
+  font-weight: bold;
+  padding: 8px 12px;
+
+}
+
+.card button:hover {
+  background-color: #808080 !important;
+    color: white !important;
+    border-color: #808080 !important;
+}
+
+.days {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  font-size: 14px; 
+  text-align: left;
+  padding: 0px;
+  margin: 0px 0px 4px 0px;
+}
+.days span:first-child {
+
+  width: 30%;
+
+}
+.question{
+  
+    text-align: left;
+    font-size: 11px;
+    color: #4e4e4f;
+    font-family: "Roboto", sans-serif;
+   
+}
+
+.help{
+    font-size: 12px;
+    text-align: left;
+    font-family: "Mulish", sans-serif;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+}
+
+.button-group {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 12px;
+}
+
+.button-group button{
+  background-color: #99CC00;
+  color:#000000;
+  width: calc(100% /3 - 6px);
+  height: 75px;
+  font-size: 13px!important;
+  font-family: "Mulish", sans-serif ;
+
+}
+
+.buttonchat{
+
+  padding-top: 10px;
+}
+</style>
+  <title>Font Awesome Icons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+        <div class="card">
+            <p class="chat">Chat with our team</p>
+          <img class="Userimage" src="https://media-hosting.imagekit.io/174d60c85bc44dcd/Screenshot%202025-03-28%20135548.png?Expires=1837758364&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NW7NqU55~Aa0rTg7yUisnC~bEy6YNZnyLgAad1iMkLweho-BSV8UFsBDMS-zFmtMlG7TaxGFRS3qDGTJY2SBVpzylEWgoGg5YFl8T15f3f9Gp0AlLHyQ~heLMEkNigSm5U44xokGHqeG24XRm59K9BuriGScFYYYEtHxbTacCI2VSJ00rfgWKZ6lxIAYSm8fiSiGtFUc-O~ozv6PVVtZ7gMsF-wf9JOBJSRJ5GH6QHWgtPPa6C3JvM4G1eahxC2W5TUZ-oiVXCqH4bPOZ40VgoNJGLfqP84UEgYcJbnAOVf4Eeb1NDglSR2f~NoHaGWa7kvyfLCoX5IutLC1u4PQGA__" style="width:50%",>
+        
+          <p class="days">
+     
+            <span>Mon - Fri </span> <span>- 08:00 – 19:00</span>
+          </p>
+          <p class="days">
+            <span>Sat </span> <span>- 08:00 – 18:00</span>
+          </p>
+          <p class="days">
+            <span>Sun </span> <span>- Closed</span>
+          </p>
+          <div class="buttonchat">
+          <button type="submit" id= "submit" class="btn btn-default"> Let's chat </button>
+        </div>
+        </div>
+        
+        <div class="card">
+            <p class="help">Need a little more help?</p>
+          <p class="question" >Did you know you can see a photo of your delivered parcel in the <a href="https://www.yodel.co.uk/yodel-app">Yodel Parcel Tracker App?</a> </p>
+          <div class="button-group">
+            <button style="font-size: 12px;">Get my collection code</button>
+            <button>Amend my delivery details</button>
+            <button>My parcel is late</button>
+          </div>
+          
+        </div>       
+</body>
+<script>
+  window.onload = function() {
+  };
+  $(function () {
+    $("submit").click(function () {
+      window.parent.postMessage(JSON.stringify({
+                    event_code: 'ym-client-event',
+                    data: JSON.stringify({
+                        event: {
+                            code: "userdetails",
+                            data: {
+                               
+                            }
+                        }
+                    })
+                }), targetOrigin);
+              }
+            )
+  }
+)
+</script>
+<script src="mainView.js"> </script>
+</html>
