@@ -77,6 +77,7 @@ div {
   color: #4e4e4f;
   font-size: 12px;
   font-family: "Mulish", sans-serif;
+  padding-left: 5px;
 }
 
 .container {
@@ -84,13 +85,16 @@ div {
   background-color: #f2f2f2;
   position: relative;
   padding-bottom: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 .divcontainer {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: white;
 }
 
 .closebtn {
@@ -159,6 +163,7 @@ color: green;
 font-weight: bold;
 margin-top: 10px;
 display: none;
+background-color: white;
 }
 .yodelLogo{
           height: 32px;
@@ -205,6 +210,13 @@ display: none;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.alertContainer {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  background-color: white;
 }
 
 .links,.links:focus,
@@ -277,8 +289,9 @@ display: none;
       <input class="form-control" type="number" id="tNumber" placeholder="Tracking number">
     </div>
        
-    
+     <div style="padding-top: 8px;">
       <input type="submit" id="submit-btn" onclick="storeInput() " value="Submit">
+    </div>
   </form>
   <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/yod-icon.png" alt="yodel" class="yodelLogo"/>
       </div>
@@ -286,7 +299,7 @@ display: none;
   </div>
 
   
-    
+    <div class="alertContainer">
     <div id="alertId" class="sticky">
       <div class="contentleft">
         <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/ex-icon.png" alt="infoIcon">
@@ -295,7 +308,7 @@ display: none;
       <div class="contentright">
         <span class="closebtn" id="closebutton" onclick="myFunction()">&times;</span>
       </div>
-
+    </div>
     </div>
     
 </body>
@@ -315,7 +328,7 @@ display: none;
   const nHelp = document.getElementById("nHelp").value.trim();
   const tNumber = document.getElementById("tNumber").value.trim();
    
-  if (!firstName || !lastName || !email || !lineaddress || !pcode || !nHelp) {
+  if (!firstName || !lastName || !email || !lineaddress || !nHelp) {
   alert("Please fill all required fields.");
   return;
   }
