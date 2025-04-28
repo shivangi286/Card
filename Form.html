@@ -206,6 +206,14 @@ display: none;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 }
+
+.links,.links:focus,
+.links:hover,
+.links:active {
+  color: #0e61f6 !important;
+  text-decoration: underline;
+}
+
 </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -282,7 +290,7 @@ display: none;
     <div id="alertId" class="sticky">
       <div class="contentleft">
         <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/ex-icon.png" alt="infoIcon">
-        <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy" target="_blank">Privacy & Cookies Policy.</a> </p>
+        <p class="alerttitle">This chat is governed by Yodel's <br> <a class="links" href="https://www.yodel.co.uk/privacy-cookies-policy" target="_blank">Privacy & Cookies Policy.</a> </p>
       </div>
       <div class="contentright">
         <span class="closebtn" id="closebutton" onclick="myFunction()">&times;</span>
