@@ -98,7 +98,12 @@ body {
     font-family: "Roboto", sans-serif;
    
 }
-
+.links,.links:focus,
+.links:hover,
+.links:active {
+  color: #0e61f6 !important;
+  text-decoration: underline;
+}
 .help{
     font-size: 15px;
     text-align: left;
@@ -163,7 +168,7 @@ body {
         
         <div class="card">
             <p class="help">Need a little more help?</p>
-          <p class="question" >Did you know you can see a photo of your delivered parcel in the <a href="https://www.yodel.co.uk/yodel-app" target="_blank">Yodel Parcel Tracker App?</a> </p>
+          <p class="question" >Did you know you can see a photo of your delivered parcel in the <a class="links" href="https://www.yodel.co.uk/yodel-app" target="_blank">Yodel Parcel Tracker App?</a> </p>
           <div class="button-group">
             <button style="font-size: 12px;" onclick= "javascript:window.open('https://www.yodel.co.uk/help-centre/how-do-i-get-the-collection-code-to-collect-my-deliver-to-yodel-store-parcel', '_blank');"> Get my collection code </button>
             <button style="font-size: 12px;" onclick= "javascript:window.open('https://www.yodel.co.uk/help-centre/i-am-not-in-what-will-happen-to-my-parcel', '_blank');"> Amend my delivery details </button>
