@@ -31,6 +31,13 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.divcontainer {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  width: 100%;
+  background-color: white;
+}
 
 .chat {
   color: black;
@@ -104,6 +111,7 @@ body {
   color: #0e61f6 !important;
   text-decoration: underline;
 }
+
 .help{
     font-size: 15px;
     text-align: left;
@@ -125,16 +133,16 @@ body {
   background-color: #99CC00;
   color:#000000;
   width: calc(100% /3 - 6px);
-  height: 75px;
-  font-size: 13px!important;
+  height: 20px;
+  font-size: 14px!important;
   font-family: "Mulish", sans-serif ;
 
 }
 
 .buttonchat{
 
-  padding-top: 10px;
-  padding-bottom: 4px;
+  padding-top: 13px;
+  padding-bottom: 8px;
 }
 </style>
   <title>Font Awesome Icons</title>
@@ -147,6 +155,7 @@ body {
 
 </head>
 <body>
+  <div class="divcontainer">
         <div class="card">
             <p class="chat">Chat with our team</p>
           <img class="Userimage" src="https://media-hosting.imagekit.io/174d60c85bc44dcd/Screenshot%202025-03-28%20135548.png?Expires=1837758364&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NW7NqU55~Aa0rTg7yUisnC~bEy6YNZnyLgAad1iMkLweho-BSV8UFsBDMS-zFmtMlG7TaxGFRS3qDGTJY2SBVpzylEWgoGg5YFl8T15f3f9Gp0AlLHyQ~heLMEkNigSm5U44xokGHqeG24XRm59K9BuriGScFYYYEtHxbTacCI2VSJ00rfgWKZ6lxIAYSm8fiSiGtFUc-O~ozv6PVVtZ7gMsF-wf9JOBJSRJ5GH6QHWgtPPa6C3JvM4G1eahxC2W5TUZ-oiVXCqH4bPOZ40VgoNJGLfqP84UEgYcJbnAOVf4Eeb1NDglSR2f~NoHaGWa7kvyfLCoX5IutLC1u4PQGA__" style="width:50%",>
@@ -175,7 +184,8 @@ body {
             <button style="font-size: 12px;" onclick= "javascript:window.open('https://www.yodel.co.uk/help-centre/my-parcel-is-late', '_blank');"> My parcel is late </button>
           </div>
           
-        </div>       
+        </div>     
+      </div>  
 </body>
 <script>
   window.onload = function() {
