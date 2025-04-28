@@ -154,28 +154,29 @@ div.sticky {
 }
 
 .submission-message {
-            color: black;
-            text-align: center;
-            margin-top: 0px;
-        }
-        .yodelLogo{
+text-align: center;
+color: green;
+font-weight: bold;
+margin-top: 10px;
+display: none;
+}
+.yodelLogo{
           height: 32px;
           width: 32px;
           border-radius: 50%;
           position: absolute;
           left: -10px;
           bottom: -24px;
-        
-        }
-        .Formvalues{
+}
+.Formvalues{
           display: flex;
           flex-direction: column;
         }
-        .Formvalues label span{
+.Formvalues label span{
           color: #CC0000;
         }
 
-        .Formvalues label {
+.Formvalues label {
           font-size: 12px;
           margin-bottom: 6px;
           font-family: Mulish, sans-serif;
@@ -215,7 +216,7 @@ div.sticky {
       <!-- <button style= "padding-top: 10px; padding-bottom: 20px; background-color: white; border: none; font-size:16px;" onclick="history.back()" ><i class="fa fa-arrow-left"></i> Back</button> -->
       <div class="container">
        <p class="title">Before we chat, we just need a few details about you and your parcel.</p>
-     <form class="Formvalues">
+     <form class="Formvalues" id="yodel-form">
       <div>
         <label for="fname">First name <span>*</span></label>
         
@@ -273,6 +274,7 @@ div.sticky {
   </form>
   <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/yod-icon.png" alt="yodel" class="yodelLogo"/>
       </div>
+      <div class="submission-message" id="submissionMessage">Details submitted successfully!</div>
   </div>
 
   
@@ -288,107 +290,83 @@ div.sticky {
 
     </div>
     
-   <!-- <div class="alert-group">
-   <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
-    <defs>
-        <!-- Replace with your desired SVG -->
-        <!-- <symbol id="info-icon" viewBox="0 0 16 16">
-            <path d="M7.92,5.32v0A.92.92,0,1,0,7,4.37v0A.92.92,0,0,0,7.92,5.32ZM8.85,6H6.55a4.58,4.58,0,0,1-.1.63,3,3,0,0,1-.2.67h1.3v3.53H6.25v1.3H9.57v-1.3H8.85ZM13,3.05A7,7,0,1,0,13,13,7,7,0,0,0,13,3.05ZM12,12A5.6,5.6,0,0,1,4,12,5.61,5.61,0,0,1,4,4,5.6,5.6,0,0,1,12,4,5.61,5.61,0,0,1,12,12Z"/>
-        </symbol>
-    </defs>
-    </svg>
-
-    <div class="icon" id="alertID">
-    <svg><use href="#info-icon" /></svg>
-    </div>
-    <p class="alerttitle">This chat is governed by Yodel's <br> <a href="https://www.yodel.co.uk/privacy-cookies-policy">Privacy & Cookies Policy.</a> </p>
-     </div>
-      
-    </div> -->
- <!-- </div> -->
-   <div class="submission-message" style="display: none;"></div>
 </body>
 
-<!-- <script>
-  function myFunction() {
-  document.getElementById("alertId").style.display = "none";
-}
-</script> -->
-
-<!-- <script src="storeInputValue.js"> </script> -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    window.onload = function() {
-    var inputFields = document.querySelectorAll('input');
-    inputFields.forEach(function(input) {
-      input.setAttribute('autocomplete', 'off');
-    });
-  };
-        $(function () {
-            $("#submit-btn").click(function () {
-                // Retrieve form data``
-                var firstName = $("#fname").val().trim();
-                var lastName = $("#lname").val().trim();
-                var email = $("#email").val().trim();
-                var lineaddress = $("#lineaddress").val().trim();
-                var pcode = $("#pcode").val().trim();
-                var nHelp = $("#nHelp").val().trim();
-                var tNumber = $("#tNumber").val().trim();
-                // Validate input fields
-                if (firstName === '' || lastName === '' || email === '' || lineaddress === ''|| nHelp === '') {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-                // Validate email format
-                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(email)) {
-                    alert('Please enter a valid email address.');
-                    return;
-                }
-                // Disable form fields after submission
-                $("input").prop('disabled', true);
-                $("button").prop('disabled', true);
-                // Send form data via postMessage
-                var targetOrigin = 'https://www.mrappliance.com'; // Replace this with your target origin
-
-                window.parent.postMessage(JSON.stringify({
-                    event_code: 'ym-client-event',
-                    data: JSON.stringify({
-                        event: {
-                            code: "userdetails",
-                            data: {
-                                firstname: firstName,
-                                lastname: lastName,
-                                lineaddress: lineaddress,
-                                email: email,
-                                pcode: pcode,
-                                nHelp: nHelp,
-                                tNumber: tNumber
-                            }
-                        }
-                    })
-                }), targetOrigin);
-                // Fade out the form and append thank you message
-                $("#submit-btn").fadeOut("slow", function () {
-                    // $(".submission-message").fadeIn("slow");
-                    alert("Details submitted successfully!")
-                });
-            });
-
-            
-        });
-    </script>
-
-    <script>
-      function myFunction() {
-  var x = document.getElementById("alertId");
-  if (x.style.display === "none") {
-    
-  } else {
-    x.style.display = "none";
+  const form = document.getElementById("yodel-form");
+  const submissionMessage = document.getElementById("submissionMessage");
+   
+  form.addEventListener("submit", function (event) {
+  event.preventDefault();
+   
+  const firstName = document.getElementById("fname").value.trim();
+  const lastName = document.getElementById("lname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const lineaddress = document.getElementById("lineaddress").value.trim();
+  const pcode = document.getElementById("pcode").value.trim();
+  const nHelp = document.getElementById("nHelp").value.trim();
+  const tNumber = document.getElementById("tNumber").value.trim();
+   
+  if (!firstName || !lastName || !email || !lineaddress || !pcode || !nHelp) {
+  alert("Please fill all required fields.");
+  return;
   }
+   
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+  alert("Please enter a valid email address.");
+  return;
+  }
+   
+  window.parent.postMessage(
+  JSON.stringify({
+  event_code: "ym-client-event",
+  data: JSON.stringify({
+  event: {
+  code: "userdetails",
+  data: {
+  firstname: firstName,
+  lastname: lastName,
+  email: email,
+  lineaddress: lineaddress,
+  pcode: pcode,
+  nHelp: nHelp,
+  tNumber: tNumber
+  }
+  }
+  }),
+  }),
+  "*"
+  );
+   
+  console.log("Data sent:", {
+  firstName,
+  lastName,
+  email,
+  lineaddress,
+  pcode,
+  nHelp,
+  tNumber
+  });
+   
+  // Disable the form
+  const inputs = form.querySelectorAll("input, select, button");
+  inputs.forEach(input => input.disabled = true);
+   
+  // Show submission message
+  submissionMessage.style.display = "block";
+  });
+  </script>  
+
+<script>
+  function myFunction() {
+var x = document.getElementById("alertId");
+if (x.style.display === "none") {
+
+} else {
+x.style.display = "none";
 }
-    </script>
+}
+</script>
 
 </html>
