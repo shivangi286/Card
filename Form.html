@@ -241,13 +241,13 @@ background-color: white;
       <div>
         <label for="fname">First name <span>*</span></label>
         
-        <input class="form-control" type="text" id="fname" placeholder="First name" required>
+        <input class="form-control" type="text" id="fname" placeholder="First name" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' required>
       </div>
      
     <div>
       <label for="lname">Last name <span>*</span> </label>
 
-      <input class="form-control" type="text" id="lname" placeholder="Last name"required>
+      <input class="form-control" type="text" id="lname" placeholder="Last name" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' required>
     </div>
         <div>
           <label for="email">Email address <span>*</span> </label>
@@ -268,6 +268,9 @@ background-color: white;
   
     <div>
       <label for="nHelp">What do you need help with? <span>*</span></label>
+      
+    <!-- </div>
+        <div> -->
           <select class="form-control" id="nHelp" required>
             <option value="">Select....</option>
             <option value="My Parcel is late">My Parcel is late</option>
