@@ -112,10 +112,10 @@ div {
 div.sticky {
   position: sticky;
   padding: 5px;
-  background-color: #f7fbeb;
+  background-color: white;
   color: black;
   bottom: 0;
-  border: 1px solid #99cc00;
+  /* border: 1px solid #99cc00; */
   width: 100%;
   margin-top: 32px;
   display: flex;
@@ -127,21 +127,23 @@ div.sticky {
   display: flex;
   align-items: flex-start;
   justify-content: start;
-  background-color: #f7fbeb;
+  background-color: white;
+  padding-top: 20px;
 }
 
 .contentleft img{
   margin-right: 8px;
-  background-color: #f7fbeb;
+  background-color: white;
 }
 
 .contentright {
-  background-color: #f7fbeb;
+  background-color: white;
 }
 
 .alerttitle{
   color: black;
-  font-size: 14px;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding-top: 1px;
   padding-left: 10px;
@@ -214,8 +216,6 @@ background-color: white;
 }
 
 .alertContainer {
-  padding-left: 10px;
-  padding-right: 10px;
   width: 100%;
   background-color: white;
 }
@@ -301,15 +301,15 @@ background-color: white;
 
   
     <div class="alertContainer">
-    <div id="alertId" class="sticky">
+    <!-- <div id="alertId" class="sticky"> -->
       <div class="contentleft">
         <img src="https://tpclient.teleperformancedibs.com/ChatExpressTP/app/cefiles/img/ex-icon.png" alt="infoIcon">
         <p class="alerttitle">This chat is governed by Yodel's <br> <a class="links" href="https://www.yodel.co.uk/privacy-cookies-policy" target="_blank">Privacy & Cookies Policy.</a> </p>
       </div>
-      <div class="contentright">
-        <span class="closebtn" id="closebutton" onclick="myFunction()">&times;</span>
-      </div>
-    </div>
+      <!-- <div class="contentright">
+        <span class="closebtn" id="closebutton" onclick="myFunction()">&times;</span> -->
+      <!-- </div> -->
+    <!-- </div> -->
     </div>
     
 </body>
