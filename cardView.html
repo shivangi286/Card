@@ -170,7 +170,7 @@ body {
             <span>Sun </span> <span>- Closed</span>
           </p>
           <div class="buttonchat">
-          <button type="submit" id= "submit" class="btn btn-default"> Let's chat </button>
+          <button type="button" id= "submit" class="btn btn-default"> Let's chat </button>
         </div>
         </div>
         
@@ -186,27 +186,31 @@ body {
         </div>     
       </div>  
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
   window.onload = function() {
   };
   $(function () {
-    $("submit").click(function () {
+    $("#submit").click(function () {
+      var targetOrigin = 'https://www.mrappliance.com';
+
       window.parent.postMessage(JSON.stringify({
                     event_code: 'ym-client-event',
                     data: JSON.stringify({
                         event: {
                             code: "userdetails",
                             data: {
-                               
+                              isClicked: true
                             }
                         }
                     })
-                }));
+                }), targetOrigin);
               }
             )
   }
 )
-</script>
-<script src="mainView.js"> </script>
+ </script>
+ <script src="mainView.js"> </script>
 </html>
