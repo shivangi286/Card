@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
    
    *,
@@ -42,7 +43,7 @@ body {
 
 .chat {
   color: black;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.4;
   margin: 0;
   font-weight: normal;
@@ -65,7 +66,6 @@ body {
 .card button {
   border: none;
   outline: 0;
-  padding: 8px;
   color: black;
   background-color: #99CC00;
   text-align: center;
@@ -73,7 +73,7 @@ body {
   width: 100%;
   font-size: 14px;
   font-weight: bold;
-  padding: 8px 12px;
+  padding: 8px 10px;
 
 }
 
@@ -101,7 +101,7 @@ body {
 .question{
   
     text-align: left;
-    font-size: 10px;
+    font-size: 8px;
     color: #4e4e4f;
     font-family: "Roboto", sans-serif;
    
@@ -114,10 +114,10 @@ body {
 }
 
 .help{
-    font-size: 12px;
+    font-size: 10px;
     text-align: left;
     font-family: "Mulish", sans-serif;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 8px 0px;
     padding: 0px;
 }
 
@@ -127,21 +127,21 @@ body {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .button-group button{
   background-color: #99CC00;
   color:#000000;
   width: calc(100% /3 - 6px);
-  height: 75px;
-  font-size: 12px!important;
+  height: 40px;
+  font-size: 10px!important;
   font-family: "Mulish", sans-serif ;
 
 }
 
 .buttonchat{
-  padding-top: 8px;
+  padding-top: 6px;
 }
 </style>
   <title>Font Awesome Icons</title>
@@ -191,17 +191,20 @@ body {
   };
   $(function () {
     $("submit").click(function () {
+
+      // Send form data via postMessage
+      
       window.parent.postMessage(JSON.stringify({
                     event_code: 'ym-client-event',
                     data: JSON.stringify({
                         event: {
                             code: "userdetails",
                             data: {
-                               
+                               isClicked: true
                             }
                         }
                     })
-                }), targetOrigin);
+                }),);
               }
             )
   }
