@@ -195,7 +195,7 @@ body {
   };
   $(function () {
     $("#submit").click(function () {
-      var targetOrigin = 'https://www.mrappliance.com';
+      
 
       window.parent.postMessage(JSON.stringify({
                     event_code: 'ym-client-event',
@@ -207,7 +207,7 @@ body {
                             }
                         }
                     })
-                }), targetOrigin);
+                }), );
               }
             )
   }
